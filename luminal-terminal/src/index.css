@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --color-surface: #0e0e13;
+  --color-surface-dim: #0e0e13;
+  --color-surface-container-low: #131319;
+  --color-surface-container-high: #1f1f27;
+  --color-surface-container-highest: #25252d;
+  --color-surface-variant: #25252d;
+  --color-surface-tint: #88adff;
+  --color-surface-bright: #2c2b34;
+  --color-surface-container: #191920;
+  --color-surface-container-lowest: #000000;
+
+  --color-primary: #88adff;
+  --color-primary-dim: #006ef2;
+  --color-primary-container: #719eff;
+  --color-primary-fixed: #719eff;
+  --color-primary-fixed-dim: #5790ff;
+
+  --color-secondary: #00e0ff;
+  --color-secondary-dim: #00d1ee;
+  --color-secondary-container: #006877;
+  --color-secondary-fixed: #50e3ff;
+  --color-secondary-fixed-dim: #00d7f4;
+
+  --color-tertiary: #9f8eff;
+  --color-tertiary-dim: #7459f7;
+  --color-tertiary-container: #7156f5;
+  --color-tertiary-fixed: #b2a5ff;
+  --color-tertiary-fixed-dim: #a495ff;
+
+  --color-error: #ff716c;
+  --color-error-dim: #d7383b;
+  --color-error-container: #9f0519;
+
+  --color-on-surface: #f9f5fe;
+  --color-on-surface-variant: #acaab2;
+  --color-on-primary: #002b68;
+  --color-on-primary-container: #002051;
+  --color-on-secondary: #004b57;
+  --color-on-secondary-container: #eafbff;
+  --color-on-tertiary: #1e0070;
+  --color-on-tertiary-container: #ffffff;
+  --color-on-error: #490006;
+  --color-on-error-container: #ffa8a3;
+  --color-on-background: #f9f5fe;
+
+  --color-outline: #76747c;
+  --color-outline-variant: #48474e;
+
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body selection:bg-primary/30;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-container-high/40 backdrop-blur-xl border-t border-secondary/10;
+  }
+
+  .cinematic-glow {
+    box-shadow: 0 0 40px -10px rgba(136, 173, 255, 0.15);
+  }
+
+  .pulse-dot {
+    @apply relative w-2 h-2 bg-[#00ff99] rounded-full;
+  }
+
+  .pulse-dot::before {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-[#00ff99] animate-ping opacity-40;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-surface-container-high rounded-full;
+}
+

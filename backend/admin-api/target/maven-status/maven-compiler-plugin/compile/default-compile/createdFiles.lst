@@ -1,0 +1,5 @@
+com/web3/marketplace/admin/controller/ProductManageController.class
+com/web3/marketplace/admin/controller/MerchantManageController.class
+com/web3/marketplace/admin/controller/UserManageController.class
+com/web3/marketplace/admin/controller/OrderManageController.class
+com/web3/marketplace/admin/AdminApplication.class

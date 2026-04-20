@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: admin-api
+  profiles:
+    active: core
+
+server:
+  port: 8083

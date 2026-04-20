@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: client-api
+  profiles:
+    active: core
+
+server:
+  port: 8081
+
+logging:
+  level:
+    com.web3.marketplace: debug

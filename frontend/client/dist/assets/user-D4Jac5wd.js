@@ -1,0 +1,1 @@
+import{q as c,f as n}from"./index-BAAy2Xtg.js";const i=c("user",()=>{const t=n(""),o=n(null),s=n(""),u=n(!1);function l(e){t.value=e}function a(e){o.value=e}function r(e){s.value=e,u.value=!!e}function f(){t.value="",o.value=null,s.value="",u.value=!1}return{token:t,userInfo:o,walletAddress:s,isConnected:u,setToken:l,setUserInfo:a,setWalletAddress:r,logout:f}});export{i as u};

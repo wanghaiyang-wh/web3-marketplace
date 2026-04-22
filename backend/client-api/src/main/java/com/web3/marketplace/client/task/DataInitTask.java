@@ -5,39 +5,14 @@ import com.web3.marketplace.core.entity.Merchant;
 import com.web3.marketplace.core.entity.NftProduct;
 import com.web3.marketplace.core.mapper.MerchantMapper;
 import com.web3.marketplace.core.mapper.NftProductMapper;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-
-@Slf4j
-@Component
-@RequiredArgsConstructor
+// @Slf4j
+// @Component
 public class DataInitTask implements CommandLineRunner {
-
-    private final MerchantMapper merchantMapper;
-    private final NftProductMapper nftProductMapper;
-
-    @Value("${app.init-data.enabled:true}")
-    private boolean initDataEnabled;
-
-    @Override
-    @Transactional
-    public void run(String... args) throws Exception {
-        if (!initDataEnabled) {
-            log.info("数据初始化任务已禁用");
-            return;
-        }
-        initMerchants();
-        initHotNFTs();
-    }
 
     private void initMerchants() {
         // 获取现有商户数量，不足5个则补充

@@ -3,14 +3,19 @@ FROM maven:3.9-eclipse-temurin-17 AS builder
 
 WORKDIR /build
 
-# 复制pom文件先下载依赖
+# 复制pom文件
 COPY backend/pom.xml backend/
 COPY backend/*/pom.xml backend/
-RUN cd backend && mvn dependency:go-offline -B
 
-# 复制源代码并编译
+# 先安装父POM到本地仓库
+RUN cd backend && mvn install -N -B
+
+# 安装子模块到本地仓库
+RUN cd backend && mvn install -DskipTests -B
+
+# 复制源代码并编译打包
 COPY backend/ ./backend/
-RUN cd backend && mvn clean package -DskipTests -B
+RUN cd backend && mvn package -DskipTests -B
 
 # 运行阶段
 FROM eclipse-temurin:17-jre-alpine

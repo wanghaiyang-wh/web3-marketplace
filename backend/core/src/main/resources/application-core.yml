@@ -7,6 +7,10 @@ spring:
       keepalive-time: 30000
       max-lifetime: 180000
       maximum-pool-size: 5
+
+app:
+  init-data:
+    enabled: ${INIT_DATA:false}
   # Redis配置（如果需要可以取消注释）
   # data:
   #   redis:

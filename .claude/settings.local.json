@@ -95,7 +95,13 @@
       "Bash(unzip -o \"/home/why/web3-marketplace/word/PRD三端.docx\" -d /tmp/prd_three)",
       "Bash(unzip -o \"/home/why/web3-marketplace/word/PRD商业模式.docx\" -d /tmp/prd_business)",
       "Bash(ls -la *.yml *.yaml Makefile)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git add *)",
+      "Bash(git reset *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Bash(git remote *)"
     ]
   }
 }

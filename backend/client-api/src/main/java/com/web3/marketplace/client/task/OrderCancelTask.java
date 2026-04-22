@@ -13,18 +13,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Slf4j
-@Component
-@RequiredArgsConstructor
+// @Slf4j
+// @Component
 public class OrderCancelTask {
 
-    private final OrderMapper orderMapper;
+    // private final OrderMapper orderMapper;
 
     /**
      * 每分钟检查并取消超时未支付的订单（30分钟超时）
      */
-    @Scheduled(cron = "0 * * * * ?")
-    @Transactional(rollbackFor = Exception.class)
+    // @Scheduled(cron = "0 * * * * ?")
+    // @Transactional(rollbackFor = Exception.class)
     public void cancelExpiredOrders() {
         LocalDateTime expireTime = LocalDateTime.now().minusMinutes(30);
 

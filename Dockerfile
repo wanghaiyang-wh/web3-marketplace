@@ -8,10 +8,10 @@ COPY backend/ ./backend/
 
 # 安装父POM（使用backend作为根目录）
 WORKDIR /build/backend
-RUN mvn install -N -B
+RUN rm -rf ~/.m2/repository/com/web3/marketplace && mvn install -N -B
 
 # 安装子模块到本地仓库
-RUN mvn install -DskipTests -B
+RUN rm -rf ~/.m2/repository/com/web3/marketplace && mvn install -DskipTests -B
 
 # 编译打包
 RUN mvn package -DskipTests -B

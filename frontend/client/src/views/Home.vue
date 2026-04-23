@@ -21,7 +21,7 @@
         </div>
         <div class="banner-dots">
           <span
-            v-for="(banner, index) in banners"
+            v-for="(_, index) in banners"
             :key="index"
             class="dot"
             :class="{ active: index === currentSlide }"

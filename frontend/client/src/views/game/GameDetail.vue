@@ -249,7 +249,7 @@ const buyNow = async () => {
   }
 
   try {
-    const res = await request.post('/api/client/order/create', {
+    await request.post('/api/client/order/create', {
       userId: userStore.userInfo.id,
       merchantId: game.value.merchantId,
       productId: game.value.id,

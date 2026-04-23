@@ -42,7 +42,7 @@ export function batchRemoveFromCart(cartIds: number[]) {
 
 // 获取用户购物车列表
 export function getUserCart(userId: number) {
-  return request.get<CartItem[]>('/api/client/cart/list', { params: { userId } })
+  return request.get('/api/client/cart/list', { params: { userId } })
 }
 
 // 获取用户购物车分页列表
